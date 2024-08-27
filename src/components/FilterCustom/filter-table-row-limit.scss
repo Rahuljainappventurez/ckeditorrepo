@@ -1,0 +1,33 @@
+.filter-table-row-limit-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+
+  .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-formControl {
+    padding: 0;
+    width: 65px !important;
+    height: 27px !important;
+    border-radius: 4px !important;
+  }
+
+
+  .MuiSelect-select.MuiSelect-outlined.MuiInputBase-input.MuiOutlinedInput-input{
+    padding-left: 10px !important;
+  }
+
+  .dropdown-svg-rotate{
+    margin-right: 10px;
+  }
+
+
+}
+
+
+
+.MuiList-root.MuiList-padding.MuiMenu-list.filter-table-ul-custom-css{
+  .filterCustom-menuItem{
+    border-radius: 0 !important;
+    margin-bottom: 5px;
+  }
+}

@@ -1,0 +1,31 @@
+@import "../../assets/css/config";
+
+.date-picker-custom {
+  .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-formControl.MuiInputBase-adornedEnd {
+    display: flex !important;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    input {
+      padding: 0;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.4;
+      color: $table-body-text-color;
+      
+      &::placeholder {
+        color: $placeholder-color !important;
+        opacity: 1;
+      }
+    }
+  }
+
+  .MuiFormControl-root {
+    width: 100%;
+  }
+
+  .MuiOutlinedInput-notchedOutline {
+    border-color: #e9cfff !important ;
+  }
+}

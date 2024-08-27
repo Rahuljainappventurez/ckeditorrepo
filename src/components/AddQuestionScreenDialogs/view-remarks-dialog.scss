@@ -1,0 +1,72 @@
+@import "../../assets/css/config";
+
+.view-remarks-dialog-main-container {
+  background: #fff;
+  .view-remarks-cross-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+
+    .dialog-box-cross-icon {
+      height: 24px;
+      width: 24px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+  }
+
+  .view-remarks-content-box {
+    .view-remarks-text {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 0 24px;
+      padding-bottom: 10px;
+
+      h4 {
+        color: $table-body-text-color;
+        font-size: 16px;
+        line-height: 19px;
+        max-width: 355px;
+        font-weight: 700;
+        padding-right: 40px;
+        margin-top: -20px;
+      }
+      p {
+        color: $table-body-text-color;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: justify;
+      }
+    }
+  }
+
+
+  .redirect-box-dialog-content-box {
+    width: 100%;
+    .redirect-box-dialog-text {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding: 0 24px;
+      padding-bottom: 10px;
+
+      h4 {
+        width: 100%;
+        color: $table-body-text-color;
+        font-size: 16px;
+        line-height: 19px;
+        font-weight: 700;
+        margin-top: -20px;
+        text-align: center;
+      }
+    }
+  }
+
+}

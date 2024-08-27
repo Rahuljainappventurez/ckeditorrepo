@@ -1,0 +1,119 @@
+.filter-container-dialog {
+  background-color: #fff;
+  // border-radius: 8px;
+  // padding: 20px;
+  // margin: 0 auto;
+  // box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+
+  .filter-header {
+    display: flex;
+    padding: 20px 30px;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #0000001a;
+
+    h2 {
+      font-size: 20px;
+      line-height: 22px;
+      color: #10182f;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 15px;
+      color: #919499;
+      line-height: 22px;
+      font-weight: 400;
+    }
+  }
+
+  .filter-body {
+    display: flex;
+    border-bottom: 1px solid #0000001a;
+
+    .sidebar {
+      border-right: 1px solid #0000001a;
+      padding: 15px;
+
+      .sidebar-list {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .sidebar-item {
+          min-width: 140px;
+          height: 42px;
+          border-radius: 12px;
+          padding: 0 13px;
+
+          .MuiTypography-root.MuiTypography-body1.MuiListItemText-primary {
+            color: rgba(0, 0, 0, 1);
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 22px;
+          }
+
+        }
+        .sidebar-item.Mui-selected {
+          background-color: rgba(217, 217, 217, 0.45);
+        }
+      }
+    }
+
+    .filter-content {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      width: 100%;
+
+      .search-container {
+        // background-color: red;
+        max-width: 244px;
+      }
+
+      .options-container {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 20px 13px;
+        padding-bottom: 0;
+
+        .option-item-container{
+          width: fit-content;
+        }
+      }
+
+    }
+
+  }
+
+  .filter-footer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px 0;
+
+    .back-button {
+      color: #3c4852;
+      width: 153px;
+      height: 44px;
+      border: 0.5px solid #3c4852;
+      border-radius: 6px;
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 600;
+    }
+
+    .submit-button {
+      background-color: #320c47;
+      color: #fff;
+      width: 153px;
+      height: 44px;
+      border-radius: 6px;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 600;
+      letter-spacing: 0.5%;
+    }
+  }
+}

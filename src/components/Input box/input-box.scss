@@ -1,0 +1,27 @@
+@import '../../assets/css/config';
+
+.input-box-passowrd-container {
+  .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-adornedEnd {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0;
+    padding-right: 20px;
+
+    input {
+      width: 100% !important;
+      transition: box-shadow 150ms ease, border-color 150ms ease,
+        padding 150ms ease !important;
+      border-radius: 8px;
+      padding: 0 12px;
+      color: $table-body-text-color;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.4;
+      outline: none;
+
+      &::placeholder {
+        color: $placeholder-color;
+      }
+    }
+  }
+}

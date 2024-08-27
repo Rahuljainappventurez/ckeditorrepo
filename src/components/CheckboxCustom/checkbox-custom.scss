@@ -1,0 +1,8 @@
+.checkbox-custom-component {
+  .MuiButtonBase-root.MuiCheckbox-root.MuiCheckbox-colorPrimary.MuiCheckbox-sizeMedium.PrivateSwitchBase-root {
+    border: unset;
+  }
+  .MuiButtonBase-root.MuiCheckbox-root.MuiCheckbox-colorPrimary.MuiCheckbox-sizeMedium.PrivateSwitchBase-root.Mui-checked {
+    background-image: unset;
+  }
+}

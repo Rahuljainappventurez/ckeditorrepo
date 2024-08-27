@@ -1,0 +1,68 @@
+@import "../../assets/css/config";
+
+.captcha-dialog-main-container {
+  background: #fff;
+  .edit-sub-topic-cross-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+
+    .dialog-box-cross-icon {
+      height: 24px;
+      width: 24px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+  }
+
+  .edit-sub-topic-content-box {
+    .edit-sub-topic-text {
+      display: flex;
+      padding: 0 24px;
+      justify-content: center;
+
+      h4 {
+        color: $table-body-text-color;
+        font-size: 30px;
+        line-height: 40px;
+        font-weight: 600;
+        text-align: center;
+      }
+    }
+
+    .confirmation-captcha-box-input.Mui-disabled {
+      display: flex;
+      justify-content: space-between;
+      background-color: #e6e6e6 !important;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      font-family: "Courier New", Courier, monospace;
+
+      input {
+        width: 100% !important;
+        padding: 0 !important;
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: 12px;
+        -webkit-text-fill-color: #333;
+        color: #333;
+      }
+
+      svg {
+        font-size: 27px !important;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation24.MuiDialog-paper.MuiDialog-paperScrollPaper.MuiDialog-paperWidthXs.MuiDialog-paperFullWidth {
+  width: unset;
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation24.MuiDialog-paper.MuiDialog-paperScrollPaper.MuiDialog-paperWidthMd.MuiDialog-paperFullWidth {
+  border-radius: 10px;
+}

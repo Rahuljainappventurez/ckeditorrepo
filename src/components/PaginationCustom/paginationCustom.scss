@@ -1,0 +1,99 @@
+@import '../../assets/css/config';
+
+.custom-pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  margin-top: 10px;
+  border-top: 1px solid $border-color-light-gray;
+
+  .custom-pagination-prev-next-btn-container {
+    display: flex;
+    gap: 10px;
+
+    button {
+      background: none;
+      outline: none;
+      border: none;
+    }
+    span {
+      color: rgb(103, 116, 142);
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 500;
+    }
+  }
+
+  .MuiTablePagination-displayedRows {
+    color: rgb(103, 116, 142);
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+  }
+
+  .custom-pagination-left-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .custom-pagination-heading {
+      color: rgb(103, 116, 142);
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 600;
+    }
+
+    .MuiToolbar-root.MuiToolbar-gutters.MuiToolbar-regular.MuiTablePagination-toolbar{
+      padding-left: 0;
+    }
+  }
+
+  .MuiPagination-root {
+    ul {
+      li {
+        &:first-child {
+          button {
+            background-color: #ffffff;
+            border-radius: 4px;
+            border: 1px solid #e6eff5;
+          }
+        }
+        &:last-child {
+          button {
+            background-color: #ffffff;
+            border-radius: 4px;
+            border: 1px solid #e6eff5;
+          }
+        }
+
+        .Mui-selected {
+          background-color: $pagination-active-box-color;
+          border-radius: 4px;
+          border: none;
+
+          color: #ffffff;
+
+          &:hover {
+            background-color: $pagination-active-box-color;
+          }
+        }
+
+        button {
+          border: none;
+        }
+      }
+    }
+  }
+
+  .MuiButtonBase-root.MuiPaginationItem-root {
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: 1px solid #e6eff5;
+    color: rgb(103, 116, 142);
+  }
+}
+
+.MuiTablePagination-actions {
+  display: none;
+}

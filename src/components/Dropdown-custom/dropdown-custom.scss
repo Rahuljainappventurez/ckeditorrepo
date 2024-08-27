@@ -1,0 +1,84 @@
+@import "../../assets/css/config";
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiMenu-paper.MuiPopover-paper.MuiMenu-paper {
+  background-color: $dropdown-bg-color !important;
+  max-height: 312px;
+  padding: 10px 0;
+  max-width: 300px;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #055fbf;
+    border-radius: 6px;
+  }
+
+  .dropdown-custom-css {
+    padding: 0;
+    margin: 0;
+
+    li {
+      border-bottom: 1px solid $border-color-light-gray;
+      border-radius: unset !important;
+      background-color: $dropdown-item-bg-color;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.4;
+      color: $table-body-text-color;
+      padding-left: 12px;
+      white-space: normal; /* Allows text to wrap */
+      word-wrap: break-word; /* Wrap long words onto the next line */
+      // overflow-wrap: break-word;
+      overflow-wrap: anywhere;
+      text-align: left;
+
+      &:hover {
+        background-color: $dropdown-item-hover-bg-color;
+      }
+    }
+  }
+}
+
+.MuiSelect-select.MuiSelect-outlined.MuiInputBase-input.MuiOutlinedInput-input {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: $table-body-text-color;
+  padding: 0 !important;
+  white-space: normal; /* Allows text to wrap */
+  word-wrap: break-word; /* Wrap long words onto the next line */
+  // overflow-wrap: break-word; 
+  overflow-wrap: anywhere;
+  text-align: left;
+  width: calc(100% - 38px) !important;
+}
+
+.dropdown-svg-rotate-2 {
+  transform: rotate(180deg);
+}
+
+.dropdown-svg-rotate {
+  cursor: pointer;
+  margin-right: 20px;
+  position: absolute;
+  right: 0;
+}
+
+.dropdown-label {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  // line-height: 1.4 !important;
+  color: $placeholder-color !important;
+  top: -6px !important;
+}
+
+.MuiSelect-select.MuiSelect-outlined.Mui-disabled.MuiInputBase-input.MuiOutlinedInput-input.Mui-disabled {
+  -webkit-text-fill-color: $table-body-text-color;
+}

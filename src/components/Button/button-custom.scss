@@ -1,0 +1,21 @@
+.button-custom-component{
+    width: -webkit-fill-available;
+    min-width: 150px;
+    background-color: #8392ab;
+    outline: none;
+    border: none;
+    min-height: 40px;
+    font-weight: 700;
+    line-height: 1.4;
+    border-radius: 8px;
+    font-size: 12px;
+    color: #FFFFFF;
+    padding: 0 6px;
+    cursor: pointer;
+    transition: all 150ms ease-in;
+    box-shadow: 0rem 0.25rem 0.375rem 0rem rgba(52, 71, 103, 0.1), 0rem 0.0625rem 0.1875rem 0rem rgba(0, 0, 0, 0.08);
+
+    &:hover{
+        transform: translateY(-1px);
+    }
+}

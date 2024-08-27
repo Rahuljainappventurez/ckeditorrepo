@@ -1,0 +1,27 @@
+.MuiButtonBase-root.MuiMenuItem-root.MuiMenuItem-gutters.MuiMenuItem-root.MuiMenuItem-gutters {
+  border-radius: unset;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  svg {
+    font-size: 20px !important;
+  }
+}
+
+.top-dashboard-navbar-container{
+  .dashbaord-navbar-avatar{
+    width: 37px;
+    height: 37px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span{
+      text-transform: uppercase;
+      font-size: 15px;
+      font-weight: 700;
+    }
+  }
+}

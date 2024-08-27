@@ -1,0 +1,27 @@
+@import '../../assets/css/config';
+
+.search-custom {
+  .MuiOutlinedInput-notchedOutline {
+    border: none !important;
+  }
+
+  .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-formControl.MuiInputBase-sizeSmall.MuiInputBase-adornedStart {
+    padding-left: 11px;
+  }
+
+  .MuiInputBase-root input {
+    padding: 0;
+    color: #1B1C57;
+    font-size: 14px;
+    font-weight: 500;
+    color: $table-body-text-color;
+    &::placeholder{
+      color: $placeholder-color !important;
+      opacity: 1;
+    }
+  }
+
+  svg{
+    font-size: 20px !important;
+  }
+}
