@@ -4,6 +4,7 @@ import CheckboxCustom from 'components/CheckboxCustom/CheckboxCustom'
 import React, { useState } from 'react'
 import ReactHtmlParser from 'react-html-parser'
 import { MathJax, MathJaxContext } from 'better-react-mathjax'
+import MathChemTextEditor from 'components/MathChemTextEditor/MathChemTextEditor'
 
 const SingleQuestionView = ({ data, onCheckboxChange, type }) => {
   const [checkboxChecked, setCheckboxChecked] = useState(false);
@@ -14,7 +15,6 @@ const SingleQuestionView = ({ data, onCheckboxChange, type }) => {
     onCheckboxChange(data?.question_no, checked);
   };
 
-  console.log(data,'vrnfu4urb3r')
 
   return (
     <MathJaxContext>
@@ -28,9 +28,10 @@ const SingleQuestionView = ({ data, onCheckboxChange, type }) => {
           <p>Question Number&nbsp;:&nbsp;&nbsp;<span>{data?.question_no}</span></p>
         </Grid>
         <Grid className='single-question-view-content'>
-          <MathJax>
+          <MathChemTextEditor  ckEditorData={data?.question_answer?.question}  disableTool = {true} />  
+          {/* <MathJax>
             {ReactHtmlParser(data?.question_answer?.question)}
-          </MathJax>
+          </MathJax> */}
           <Grid className='final-status-container'>
             <p>Final Status&nbsp;:&nbsp;&nbsp;&nbsp;<span>Pending</span></p>
           </Grid>
@@ -43,10 +44,30 @@ const SingleQuestionView = ({ data, onCheckboxChange, type }) => {
             </span></p> */}
 
             {/* <Grid> */}
-              <span>1.</span>
-              <MathJax className={(data?.question_answer?.checkboxes?.option1) ? 'answer-marked' : ''}>
+              <span>1.{data?.question_answer?.checkboxes?.option1 ? <i class="fa-solid success-icon fa-circle-check"></i> :<i class="fa-solid danger-icon fa-circle-xmark"></i>}</span>
+              <MathChemTextEditor  ckEditorData={data?.question_answer?.option1}  disableTool = {true} />
+              
+              <span>2.{data?.question_answer?.checkboxes?.option2 ? <i class="fa-solid success-icon fa-circle-check"></i> :<i class="fa-solid danger-icon fa-circle-xmark"></i>}</span>
+              <MathChemTextEditor  ckEditorData={data?.question_answer?.option2}  disableTool = {true} />
+              
+              <span>3.{data?.question_answer?.checkboxes?.option3 ? <i class="fa-solid success-icon fa-circle-check"></i> :<i class="fa-solid danger-icon fa-circle-xmark"></i>}</span>
+              <MathChemTextEditor  ckEditorData={data?.question_answer?.option3}  disableTool = {true} />
+              
+              <span>4.{data?.question_answer?.checkboxes?.option4 ? <i class="fa-solid success-icon fa-circle-check"></i> :<i class="fa-solid danger-icon fa-circle-xmark"></i>}</span>
+              <MathChemTextEditor  ckEditorData={data?.question_answer?.option4}  disableTool = {true} />
+           
+                {/* <MathJax className={(data?.question_answer?.checkboxes?.option1) ? 'answer-marked' : ''}>
                 {ReactHtmlParser(data?.question_answer?.option1)}
-              </MathJax>
+              </MathJax> */}
+              {/* <MathJax className={(data?.question_answer?.checkboxes?.option1) ? 'answer-marked' : ''}>
+                {ReactHtmlParser(data?.question_answer?.option2)}
+              </MathJax> */}
+              {/* <MathJax className={(data?.question_answer?.checkboxes?.option1) ? 'answer-marked' : ''}>
+                {ReactHtmlParser(data?.question_answer?.option3)}
+              </MathJax> */}
+              {/* <MathJax className={(data?.question_answer?.checkboxes?.option1) ? 'answer-marked' : ''}>
+                {ReactHtmlParser(data?.question_answer?.option4)}
+              </MathJax> */}
             {/* </Grid> */}
 
 

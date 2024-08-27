@@ -3,15 +3,15 @@ import CKEditor from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "ckeditor5-custom-build-mathtype-imageresize";
 import './math-chem-text-editor.scss';
 
-const MathChemTextEditor = ({ ckEditorData, setCkEditorData, editorKey, placeholder }) => {
+const MathChemTextEditor = ({ ckEditorData, setCkEditorData, editorKey, placeholder, disableTool=false }) => {
     const editorRef = useRef();
 
     return (
-        <div className="math-chem-type-ckEditor-container">
+        <div className="math-chem-type-ckEditor-container"> 
             <CKEditor
                 editor={ClassicEditor}
                 data={ckEditorData}
-                // disabled={true}
+                disabled={disableTool}
                 config={{
                     // **************** if any error in math type then uncomment the licenseKey line  *****************
                     // licenseKey:
@@ -96,7 +96,7 @@ const MathChemTextEditor = ({ ckEditorData, setCkEditorData, editorKey, placehol
                     },
                     balloonToolbar: ['bold', 'italic', '|', 'link', 'insertImage'],
                     table: {
-                        contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells', 'tableProperties', 'tableCellProperties']
+                        contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells', 'tableProperties', 'tableCellProperties'],       
                     },
                     heading: {
                         options: [
@@ -165,18 +165,16 @@ const MathChemTextEditor = ({ ckEditorData, setCkEditorData, editorKey, placehol
                     editor.plugins.get("FileRepository").createUploadAdapter = (loader) => {
                         return new MyUploadAdapter(loader);
                     };
-                    // const toolbarElement = editor.ui.view.toolbar.element;
-                    // const editableElement = editor.ui.view.editable.element;
-                    // editableElement.style.background = 'red'
-                    // toolbarElement.style.display = 'none';
+                        const toolbarElement = editor.ui.view.toolbar.element;
+                        const editableElement = editor.ui.view.editable.element;
+                        editableElement.style.background = `${disableTool?'transparent':''}`
+                        editableElement.style.minHeight = `${disableTool?'unset':''}`
+                        toolbarElement.style.display = `${disableTool?'none':''}`;
 
                 }}
                 ref={editorRef}
                 onChange={(event, editor) => {
                     const data = editor.getData();
-                    console.log(data, "datfuyefuyefyefe7fa");
-                    console.log(event, 'event')
-                    console.log(editor, 'editor')
                     setCkEditorData(editorKey, data);
                 }}
             />
