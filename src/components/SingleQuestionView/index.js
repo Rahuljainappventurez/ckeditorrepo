@@ -44,16 +44,16 @@ const SingleQuestionView = ({ data, onCheckboxChange, type }) => {
             </span></p> */}
 
             {/* <Grid> */}
-              <span>1.{data?.question_answer?.checkboxes?.option1 ? <i class="fa-solid success-icon fa-circle-check"></i> :<i class="fa-solid danger-icon fa-circle-xmark"></i>}</span>
+              <span>1.{data?.question_answer?.checkboxes?.option1 ? <i className="fa-solid success-icon fa-circle-check"></i> :<i className="fa-solid danger-icon fa-circle-xmark"></i>}</span>
               <MathChemTextEditor  ckEditorData={data?.question_answer?.option1}  disableTool = {true} />
               
-              <span>2.{data?.question_answer?.checkboxes?.option2 ? <i class="fa-solid success-icon fa-circle-check"></i> :<i class="fa-solid danger-icon fa-circle-xmark"></i>}</span>
+              <span>2.{data?.question_answer?.checkboxes?.option2 ? <i className="fa-solid success-icon fa-circle-check"></i> :<i className="fa-solid danger-icon fa-circle-xmark"></i>}</span>
               <MathChemTextEditor  ckEditorData={data?.question_answer?.option2}  disableTool = {true} />
               
-              <span>3.{data?.question_answer?.checkboxes?.option3 ? <i class="fa-solid success-icon fa-circle-check"></i> :<i class="fa-solid danger-icon fa-circle-xmark"></i>}</span>
+              <span>3.{data?.question_answer?.checkboxes?.option3 ? <i className="fa-solid success-icon fa-circle-check"></i> :<i className="fa-solid danger-icon fa-circle-xmark"></i>}</span>
               <MathChemTextEditor  ckEditorData={data?.question_answer?.option3}  disableTool = {true} />
               
-              <span>4.{data?.question_answer?.checkboxes?.option4 ? <i class="fa-solid success-icon fa-circle-check"></i> :<i class="fa-solid danger-icon fa-circle-xmark"></i>}</span>
+              <span>4.{data?.question_answer?.checkboxes?.option4 ? <i className="fa-solid success-icon fa-circle-check"></i> :<i className="fa-solid danger-icon fa-circle-xmark"></i>}</span>
               <MathChemTextEditor  ckEditorData={data?.question_answer?.option4}  disableTool = {true} />
            
                 {/* <MathJax className={(data?.question_answer?.checkboxes?.option1) ? 'answer-marked' : ''}>
