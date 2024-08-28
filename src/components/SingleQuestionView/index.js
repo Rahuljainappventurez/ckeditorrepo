@@ -37,13 +37,6 @@ const SingleQuestionView = ({ data, onCheckboxChange, type }) => {
           </Grid>
           <Grid className={`single-question-view-answer-container ${data?.answer_type === 'subjective' ? 'display-none' : 'flex'}`}>
 
-            {/* <p className={(data?.question_answer?.checkboxes?.option1) ? 'answer-marked' : ''}><span>1.</span>&nbsp;&nbsp;&nbsp;<span>
-              <MathJax style={{ color: 'red' }} >
-                {ReactHtmlParser(data?.question_answer?.option1)}
-              </MathJax>
-            </span></p> */}
-
-            {/* <Grid> */}
               <span>1.{data?.question_answer?.checkboxes?.option1 ? <i className="fa-solid success-icon fa-circle-check"></i> :<i className="fa-solid danger-icon fa-circle-xmark"></i>}</span>
               <MathChemTextEditor  ckEditorData={data?.question_answer?.option1}  disableTool = {true} />
               
@@ -56,23 +49,6 @@ const SingleQuestionView = ({ data, onCheckboxChange, type }) => {
               <span>4.{data?.question_answer?.checkboxes?.option4 ? <i className="fa-solid success-icon fa-circle-check"></i> :<i className="fa-solid danger-icon fa-circle-xmark"></i>}</span>
               <MathChemTextEditor  ckEditorData={data?.question_answer?.option4}  disableTool = {true} />
            
-                {/* <MathJax className={(data?.question_answer?.checkboxes?.option1) ? 'answer-marked' : ''}>
-                {ReactHtmlParser(data?.question_answer?.option1)}
-              </MathJax> */}
-              {/* <MathJax className={(data?.question_answer?.checkboxes?.option1) ? 'answer-marked' : ''}>
-                {ReactHtmlParser(data?.question_answer?.option2)}
-              </MathJax> */}
-              {/* <MathJax className={(data?.question_answer?.checkboxes?.option1) ? 'answer-marked' : ''}>
-                {ReactHtmlParser(data?.question_answer?.option3)}
-              </MathJax> */}
-              {/* <MathJax className={(data?.question_answer?.checkboxes?.option1) ? 'answer-marked' : ''}>
-                {ReactHtmlParser(data?.question_answer?.option4)}
-              </MathJax> */}
-            {/* </Grid> */}
-
-
-
-
           </Grid>
 
           <Grid style={{ display: 'flex', gap: '20px', marginTop: '20px' }}>
