@@ -11,9 +11,9 @@ export default function PrivateRouter() {
         <MainLayout>
           <Outlet />
         </MainLayout>
-      ) : (
-        <Navigate to={routerConstants?.loginRoute} />
-      )}
+       ) : ( 
+         <Navigate to={routerConstants?.loginRoute} /> 
+       )} 
     </>
   );
 }

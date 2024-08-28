@@ -70,9 +70,12 @@ const AddEditQuestionCreatorEditor = ({ type }) => {
     });
 
     const setCkEditorData = (key, data) => {
+        console.log(data, "enekeknfenkf")
+        let newData = data.replaceAll('<mo>\\</mo>','')
+        // console.log(newData, "enekeknfenkf")
         setState(prevState => ({
             ...prevState,
-            [key]: data
+            [key]: newData
         }));
     };
 
