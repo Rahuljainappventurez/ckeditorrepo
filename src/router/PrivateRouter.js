@@ -7,13 +7,13 @@ export default function PrivateRouter() {
   const isLoggedIn = localStorage.getItem("ACCESS_TOKEN");
   return (
     <>
-      {isLoggedIn ? (
+      {/* {isLoggedIn ? ( */}
         <MainLayout>
           <Outlet />
         </MainLayout>
-       ) : ( 
-         <Navigate to={routerConstants?.loginRoute} /> 
-       )} 
+       {/* ) : (  */}
+         {/* <Navigate to={routerConstants?.loginRoute} />  */}
+       {/* )}  */}
     </>
   );
 }

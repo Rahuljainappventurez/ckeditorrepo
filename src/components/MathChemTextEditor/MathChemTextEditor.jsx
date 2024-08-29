@@ -8,73 +8,88 @@ const MathChemTextEditor = ({ ckEditorData, setCkEditorData, editorKey, placehol
 
     const [editorInstance, setEditorInstance] = useState(null);
     const [changeEle, setChangeEle] = useState(false)
-    const [alignTable, setAlignTable] = useState({left:false,right:true,center:true})
+    
+    const [alignTable, setAlignTable] = useState({
+        left: false,
+        center: false,
+        right: false,
+    });
+
 
     // This effect runs when editorInstance is set
     useEffect(() => {
         if (editorInstance) {
             const editableElement = editorInstance.ui.view.editable.element;
-            console.log(editableElement, "jgjkkdjf");
-            const figures = editableElement.querySelectorAll('figure');
-            console.log(figures,"jgjkkdjf")
-            console.log(alignTable.left)
-            if(alignTable?.left===true){
-                editableElement.classList.add('my-custom-class');
-                figures.forEach(figure => {
-                    // Add or modify the style attribute
-                    figure.style.border = "2px solid red"; // Example: adding a red border
-                    figure.style.padding = "10px"; // Example: adding padding
-                    figure.style.float = "left";
-                    // You can add more styles as needed
-                });
 
-            }
-                if(alignTable?.center===true){
-                    editableElement.classList.add('my-custom-class');
-                    figures.forEach(figure => {
-                        // Add or modify the style attribute
-                        figure.style.border = "2px solid red"; // Example: adding a red border
-                        figure.style.padding = "10px"; // Example: adding padding
-                        figure.style.float = "none";
-                        // You can add more styles as needed
-                    });
-
-                }
-                    if(alignTable?.right===true){
-                        editableElement.classList.add('my-custom-class');
-                        figures.forEach(figure => {
-                            // Add or modify the style attribute
-                            figure.style.border = "2px solid red"; // Example: adding a red border
-                            figure.style.padding = "10px"; // Example: adding padding
-                            figure.style.float = "right";
-                            // You can add more styles as needed
-                        });
-            }
-            // You can now safely work with the editableElement
-        }
-    }, [editorRef, changeEle, alignTable]);
-
-    console.log(alignTable, alignTable.left, "deefef")
-
-   const setAlignLeft = () =>{
-    setAlignTable((prev) => ({...prev, left:true,right:false,center:false }))
-   }
-   const setAlignRight = () =>{
-    setAlignTable((prev) => ({...prev, left:false,right:true,center:false }))
-   }
-   const setAlignCenter = () =>{
-    setAlignTable((prev) => ({...prev, left:false,right:false,center:true }))
-   }
+            const model = editorInstance.model;
+            const selection = model.document.selection;
+            // console.log(selection, "dnebkeioah")
+            const selectedElement = selection.getSelectedElement();
+            const position = selection.getFirstPosition();
+            console.log(position.root._children, "dnebkeioah")
+            
+        
 
 
     
+            
+            const figures = editableElement.querySelectorAll('figure');
+            // console.log(editableElement, "eeeef")
+            if(alignTable?.left===true){
+                if (figures.length > 0) {
+                    // Select the last figure
+                    const lastFigure = figures[figures.length - 1];
+                    
+                    // Perform actions on the last figure
+                    lastFigure.style.float = "left";
+                }
+
+                // figures.forEach(figure => {
+                //     figure.style.float = "left";
+                // });
+            }
+                if(alignTable?.center===true){
+                    if (figures.length > 0) {
+                        // Select the last figure
+                        const lastFigure = figures[figures.length - 1];
+                        
+                        // Perform actions on the last figure
+                        lastFigure.style.float = "none";
+                    }
+                    // figures.forEach(figure => {
+                    //     figure.style.float = "none";
+                    // });
+                }
+                    if(alignTable?.right===true){
+                        if (figures.length > 0) {
+                            // Select the last figure
+                            const lastFigure = figures[figures.length - 1];
+                            
+                            // Perform actions on the last figure
+                            lastFigure.style.float = "right";
+                        }
+                        // figures.forEach(figure => {
+                        //     figure.style.float = "right";
+                        // });
+            }
+        }
+    }, [editorRef, changeEle, alignTable]);
+
+ 
+    const handleAlignment = (alignment) => {
+        setAlignTable({
+            left: alignment === 'left',
+            center: alignment === 'center',
+            right: alignment === 'right',
+        });
+    };
+
+    
     return (
-        
-        // <button onClick={() => setAlignTable(true)}>align left</button>
         <>
-         <button type="button" onClick={setAlignLeft}>align left</button>
-         <button type="button" onClick={setAlignCenter}>align center</button>
-         <button type="button" onClick={setAlignRight}>align right</button>
+         <button type="button" className="editor-btn" onClick={() => handleAlignment('left')}>align left</button>
+         <button type="button" className="editor-btn" onClick={() => handleAlignment('center')}>align center</button>
+         <button type="button" className="editor-btn" onClick={() => handleAlignment('right')}>align right</button>
         <div className="math-chem-type-ckEditor-container"> 
             <CKEditor
                 editor={ClassicEditor}
@@ -92,7 +107,7 @@ const MathChemTextEditor = ({ ckEditorData, setCkEditorData, editorKey, placehol
                         'undo',
                         'redo',
                         '|',
-                        'sourceEditing',
+                        'sourceEditing',    
                         'findAndReplace',
                         'selectAll',
                         '|',
@@ -109,10 +124,6 @@ const MathChemTextEditor = ({ ckEditorData, setCkEditorData, editorKey, placehol
                         'subscript',
                         'superscript',
                         '|',
-        //                 'alignment:left',    // Add alignment options
-        // 'alignment:center',
-        // 'alignment:right',
-        // 'alignment:justify',
                         'specialCharacters',
                         'pageBreak',
                         'link',
@@ -170,9 +181,6 @@ const MathChemTextEditor = ({ ckEditorData, setCkEditorData, editorKey, placehol
                     table: {
                         contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells', 'tableProperties', 'tableCellProperties',  'alignment'],       
                     },
-                    // alignment: {
-                    //     options: [ 'left', 'center', 'right', 'justify' ] // Ensure options are available
-                    // },
                     heading: {
                         options: [
                             {
@@ -240,19 +248,7 @@ const MathChemTextEditor = ({ ckEditorData, setCkEditorData, editorKey, placehol
                     editor.plugins.get("FileRepository").createUploadAdapter = (loader) => {
                         return new MyUploadAdapter(loader);
                     };
-                    // ClassicEditor.builtinPlugins = [
-                    //     ...ClassicEditor.builtinPlugins,
-                    //     'Alignment'
-                    // ];
-                    // console.log(
-                    //     "toolbar: ",
-                    //     Array.from(editor.ui.componentFactory.names())
-                    //   );
-                    //   console.log(   
-                    //     "plugins: ",
-                    //     ClassicEditor.builtinPlugins.map((plugin) => plugin.pluginName)
-                    //   );
-
+                
                     setEditorInstance(editor);
 
                         const toolbarElement = editor.ui.view.toolbar.element;
@@ -266,30 +262,7 @@ const MathChemTextEditor = ({ ckEditorData, setCkEditorData, editorKey, placehol
                 onChange={(event, editor) => {
                     const data = editor.getData();
                     const editableElement = editor.ui.view.editable.element;
-                    // editableElement.classList.add('my-custom-class');
                     setChangeEle((prev) => !prev)
-                    // const figures = editableElement.querySelectorAll('figure');
-                    // figures.forEach(figure => {
-                    //     figure.classList.add('my-figure-class');
-                    // });
-
-                    // setEditorInstance(data);
-
-                    // const handleDoubleClick = (event) => {
-                    //     const target = event.target;
-        
-                    //     // Check if the clicked element is a <figure>
-                    //     if (target.tagName.toLowerCase() === 'figure') {
-                    //         target.classList.toggle('my-figure-class');
-                    //     }
-                    // };
-        
-                    // // Add event listener to the editable area
-                    // editableElement.addEventListener('dblclick', handleDoubleClick);
-
-
-
-                    // console.log(editableElement,figures, "jdkllrh")
                     setCkEditorData(editorKey, data);
                 }}
             />
